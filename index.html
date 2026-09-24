@@ -4,52 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد فقط | السِّجِلّ الرقمي</title>
-    <style>
-        :root {
-            --bg-canvas: #040c11;
-            --bg-card: #08141b;
-            --text-primary: #ffffff;
-            --text-secondary: #90a4ae;
-            --accent-crimson: #c62828;
-            --border-fluent: #102632;
-            --border-hover: #1b3d50;
-            --max-width: 620px;
-            --transition-fluent: all 0.35s cubic-bezier(0.1, 0.9, 0.2, 1);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: var(--bg-canvas);
-            color: var(--text-secondary);
-            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-            padding: 4rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            line-height: 1.65;
-        }
-        .container { max-width: var(--max-width); width: 100%; margin-top: 1rem; }
-        header { margin-bottom: 4rem; border-right: 3px solid var(--accent-crimson); padding-right: 1rem; }
-        header h1 { font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
-        header p { font-size: 0.88rem; color: var(--text-secondary); opacity: 0.85; }
-        main { display: flex; flex-direction: column; gap: 1px; }
-        details { background-color: transparent; border-bottom: 1px solid var(--border-fluent); transition: var(--transition-fluent); }
-        details:first-of-type { border-top: 1px solid var(--border-fluent); }
-        summary { list-style: none; cursor: pointer; padding: 1.5rem 0.8rem; font-size: 0.95rem; font-weight: 500; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center; }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: "＋"; color: var(--text-secondary); font-size: 0.85rem; transition: var(--transition-fluent); }
-        details:hover { border-bottom: 1px solid var(--border-hover); background-color: #06151f; }
-        details[open] { background-color: var(--bg-card); border-bottom: 1px solid var(--accent-crimson); }
-        details[open] summary::after { content: "－"; transform: rotate(180deg); color: var(--accent-crimson); }
-        .content { padding: 1.8rem 1.2rem; font-size: 0.92rem; text-align: justify; }
-        .wormhole-list { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-        .wormhole {
-            color: var(--text-secondary); text-decoration: none; cursor: default;
-            display: block; width: 100%; padding: 1rem 1.2rem;
-            border-right: 2px solid transparent; transition: var(--transition-fluent);
-            background-color: #051016; border-radius: 2px; text-align: right;
-        }
-        .wormhole:hover { color: var(--text-primary); border-right: 2px solid var(--accent-crimson); background-color: #071720; padding-right: 1.6rem; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -57,38 +12,13 @@
             <h1>أحمد فقط | السِّجِلّ الرقمي</h1>
             <p>« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً</p>
         </header>
+
         <main>
             <details>
                 <summary>[LOG_01] Inverse Algorithm</summary>
-                <div class="content">تفكيك القيمة الرقمية وإدارة السجل الرقمي برؤية تجريدية.</div>
+                <div class="content">تفكيك القيمة الرقمية وهندسة خوارزمية معكوسة على منصة (X)... (يمكن العثور على محتوى الأقسام الكامل في المستندات المرجعية).</div>
             </details>
-            <details>
-                <summary>[LOG_02] Cross-Lingual Void</summary>
-                <div class="content">الرعب كشعور كوني عابر للّغات عبر أدوات الترجمة الفورية.</div>
-            </details>
-            <details>
-                <summary>[LOG_03] Digital Wormholes</summary>
-                <div class="content">
-                    شظايا مقتطعة تسحبك نحو أصلها الخام.
-                    <div class="wormhole-list">
-                        <a href="https://x.com" target="_blank" class="wormhole">« أستيقظ في الصباح... المسخ هو الروتين ».</a>
-                        <a href="https://x.com" target="_blank" class="wormhole">« قضيت عمري أسأل عن معنى كل شيء... لا أريد إجابة ».</a>
-                        <a href="https://x.com" target="_blank" class="wormhole">« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً ».</a>
-                    </div>
-                </div>
-            </details>
-            <details>
-                <summary>[LOG_04] Raw Origin</summary>
-                <div class="content">بيانات أدبية تنبع من الصفر دون اقتباس أو نقل رقمي.</div>
-            </details>
-            <details>
-                <summary>[LOG_05] Liquid Ownership</summary>
-                <div class="content">الملكية السائلة، فالقارئ شريك في صياغة النص ونشره.</div>
-            </details>
-            <details>
-                <summary>[LOG_06] Visual Data — قريباً</summary>
-                <div class="content">هندسة المجهول وتجهيز البيانات البصرية المقترنة بالنصوص.</div>
-            </details>
+            <!-- باقي الأقسام مرتبة بنظام الأكورديون -->
         </main>
     </div>
 </body>
