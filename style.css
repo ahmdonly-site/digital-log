@@ -1,0 +1,178 @@
+/* 🎨 Microsoft Fluent UI & Identity Theme - Ahmad Only */
+
+:root {
+    /* لوحة الألوان المستخرجة هندسياً من الهوية البصرية */
+    --bg-canvas: #03090d;         
+    --bg-card: #06141c;           
+    --text-primary: #ffffff;       
+    --text-secondary: #8ca0ab;     
+    --accent-crimson: #b71c1c;     
+    --border-fluent: #0c202b;      
+    --border-hover: #153243;       
+    
+    /* معايير تجربة المستخدم وأبعاد الشاشات (UI/UX Settings) */
+    --max-width: 620px;
+    --transition-fluent: all 0.35s cubic-bezier(0.1, 0.9, 0.2, 1); /* حركة مايكروسوفت الانسيابية */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-canvas);
+    color: var(--text-secondary);
+    /* الاعتماد على خط Segoe UI الرسمي لمايكروسوفت مع خطوط آبل لضمان مظهر رسمي حاد */
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 4rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* ترويسة الموقع الهندسية */
+header {
+    margin-bottom: 4rem;
+    border-right: 3px solid var(--accent-crimson); /* خط أحمر مخملي يربط الهوية بالاسم */
+    padding-right: 1rem;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* 📁 نظام الأكورديون التفاعلي (Fluent UI Accordion) */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+}
+
+details {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-fluent);
+    transition: var(--transition-fluent);
+}
+
+details:first-of-type {
+    border-top: 1px solid var(--border-fluent);
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.5rem 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: var(--transition-fluent);
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* علامة بلس دقيقة بدلاً من الأسهم التقليدية */
+summary::after {
+    content: "＋"; 
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 300;
+    transition: var(--transition-fluent);
+}
+
+/* تأثير التمرير الفاخر فوق العنصر (Hover) */
+details:hover {
+    border-bottom: 1px solid var(--border-hover);
+    background-color: #040f16;
+}
+
+details:hover summary {
+    padding-right: 1.2rem; /* تمدد وارتداد ناعم عند اللمس */
+}
+
+/* حالة القسم المفتوح */
+details[open] {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--accent-crimson); /* يضيء بالأحمر الورد المخملي عند الفتح */
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--border-fluent);
+    color: var(--text-primary);
+}
+
+details[open] summary::after {
+    content: "－"; /* تتحول لعلامة ناقص عند الفتح */
+    transform: rotate(180deg);
+    color: var(--accent-crimson);
+}
+
+/* مساحة البيانات النصية والأدبية */
+.content {
+    padding: 1.8rem 1.2rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    text-align: justify;
+    animation: fluentSlideIn 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+/* 🌪️ فخ الفجوات الرقمية (Wormholes Configuration) */
+.wormhole-list {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.wormhole {
+    color: var(--text-secondary);
+    text-decoration: none;
+    cursor: default; /* إخفاء مؤشر اللمس لتبدو التغريدة كنص محايد */
+    display: block;
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-right: 2px solid transparent;
+    transition: var(--transition-fluent);
+    background-color: #040e14;
+    border-radius: 2px;
+    text-align: right;
+}
+
+.wormhole:hover {
+    color: var(--text-primary);
+    border-right: 2px solid var(--accent-crimson); /* إضاءة حمراء ناعمة تنبثق فجأة */
+    background-color: #06161f;
+    padding-right: 1.6rem;
+}
+
+/* أنيميشن التمدد الخاص بواجهات Fluent UI */
+@keyframes fluentSlideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
