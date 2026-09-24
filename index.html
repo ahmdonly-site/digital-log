@@ -4,68 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد فقط | السِّجِلّ الرقمي</title>
-    <!-- الربط المباشر مع ملف التنسيق الصارم -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body dir="rtl">
     <div class="container">
         
-        <!-- الهيدر الصارم والنظيف الأصلي الملتزم بالـ Minimalism -->
+        <!-- الهيدر الصارم المتوافق مع فلسفة Microsoft Fluent UI -->
         <header>
-            <h1>أحمد فقط | السِّجِلّ الرقمي</h1>
-            <p>« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً</p>
+            <div class="profile-info">
+                <h1 id="site-title" data-ar="أحمد فقط | السِّجِلّ الرقمي" data-en="Ahmad Only | Digital Log">أحمد فقط | السِّجِلّ الرقمي</h1>
+                <p id="site-sub" data-ar="« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً" data-en="« Writing is a form of prayer » Insurance clerk by day - Existential horror writer by night">« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً</p>
+            </div>
+            
+            <div class="action-buttons">
+                <!-- أزرار الأولوية والتحكم اللغوي بنظام مايكروسوفت ديزاين -->
+                <button onclick="toggleLanguage()" class="fluent-btn fluent-btn-primary" id="lang-btn">English</button>
+                <a href="https://x.com" target="_blank" class="fluent-btn fluent-btn-secondary" id="btn-x" data-ar="منصة X" data-en="Platform X">منصة X</a>
+            </div>
         </header>
 
-        <!-- مستودع البيانات التفاعلية للأقسام الستة المستقرة -->
+        <!-- مستودع الأقسام الستة المحكمة ثنائية اللغة بالكامل -->
         <main>
             <details>
-                <summary>[LOG_01] Inverse Algorithm</summary>
-                <div class="content">
-                    تفكيك القيمة الرقمية. أُمارسُ كتابةَ الرعب الوجودي على منصة (X) عبر هندسة خوارزمية معكوسة. الهدف الحقيقي هو الامتداد الأفقي في الفراغ: تحقيق أقصى معدل مشاهدات وعِدَادُ المتابعين صفر. قائمة المتابَعين تعكس المتابِعين بدقة وتجرد؛ عدد من أُتابعهم يُمثّل عدد من يُتابعني، دون تمييز أو فرز رقمي.
+                <summary id="log1-title" data-ar="[LOG_01] الخوارزمية المعكوسة" data-en="[LOG_01] Inverse Algorithm">[LOG_01] الخوارزمية المعكوسة</summary>
+                <div class="content" id="log1-text" 
+                     data-ar="تفكيك القيمة الرقمية. أُمارسُ كتابةَ الرعب الوجودي على منصة (X) عبر هندسة خوارزمية معكوسة. الهدف الحقيقي هو الامتداد الأفقي في الفراغ: تحقيق أقصى معدل مشاهدات وعِدَادُ المتابعين صفر. قائمة المتابَعين تعكس المتابِعين بدقة وتجرد؛ عدد من أُتابعهم يُمثّل عدد من يُتابعني، دون تمييز أو فرز رقمي." 
+                     data-en="Deconstructing digital value. I practice writing existential horror on platform (X) through an inverse algorithmic architecture. The ultimate goal is horizontal expansion into the void: maximizing impressions while keeping the follower count at absolute zero. The following list perfectly mirrors followers; the number of those I follow equals the exact number of those who follow me, with no digital filtering or discrimination.">
+                     تفكيك القيمة الرقمية. أُمارسُ كتابةَ الرعب الوجودي على منصة (X) عبر هندسة خوارزمية معكوسة. الهدف الحقيقي هو الامتداد الأفقي في الفراغ: تحقيق أقصى معدل مشاهدات وعِدَادُ المتابعين صفر. قائمة المتابَعين تعكس المتابِعين بدقة وتجرد؛ عدد من أُتابعهم يُمثّل عدد من يُتابعني، دون تمييز أو فرز رقمي.
                 </div>
             </details>
 
             <details>
-                <summary>[LOG_02] Cross-Lingual Void</summary>
-                <div class="content">
-                    الرعب كشعور كوني عابر للّغات. يجري هندسة البنية التركيبية للنصوص لتتوافق بشكل كامل مع أدوات الترجمة الفورية لمنصة (X). الغاية هي تصفية النص من الهياكل المحلية المعقدة، ليظل المعنى الوجودي حياً، مفهوماً، ومحسوساً بالإنجليزية، الفرنسية، الإسبانية، واليابانية؛ فالخوف من الفراغ لا يحتاج إلى مترجم.
+                <summary id="log2-title" data-ar="[LOG_02] العبور اللغوي" data-en="[LOG_02] Cross-Lingual Void">[LOG_02] العبور اللغوي</summary>
+                <div class="content" id="log2-text" 
+                     data-ar="الرعب كشعور كوني عابر للّغات. يجري هندسة البنية التركيبية للنصوص لتتوافق بشكل كامل مع أدوات الترجمة الفورية لمنصة (X). الغاية هي تصفية النص من الهياكل المحلية المعقدة، ليظل المعنى الوجودي حياً، مفهوماً، ومحسوساً بالإنجليزية، الفرنسية، الإسبانية، واليابانية؛ فالخوف من الفراغ لا يحتاج إلى مترجم." 
+                     data-en="Horror as a universal, cross-lingual sensation. The structural syntax of the texts is engineered to align seamlessly with instant translation tools on platform (X). The objective is to strip the narrative of complex local frameworks, keeping the existential meaning alive, understood, and felt in English, French, Spanish, and Japanese; for the fear of the void requires no translator.">
+                     الرعب كشعور كوني عابر للّغات. يجري هندسة البنية التركيبية للنصوص لتتوافق بشكل كامل مع أدوات الترجمة الفورية لمنصة (X). الغاية هي تصفية النص من الهياكل المحلية المعقدة، ليظل المعنى الوجودي حياً، مفهوماً، ومحسوساً بالإنجليزية، الفرنسية، الإسبانية، واليابانية؛ فالخوف من الفراغ لا يحتاج إلى مترجم.
                 </div>
             </details>
 
             <details>
-                <summary>[LOG_03] Digital Wormholes</summary>
+                <summary id="log3-title" data-ar="[LOG_03] الفجوات الرقمية" data-en="[LOG_03] Digital Wormholes">[LOG_03] الفجوات الرقمية</summary>
                 <div class="content">
-                    شظايا مقتطعة من العدم. نصوص لا تبدو كارتباطات تشعبية، لكنها فجوات سريالية تسحبك نحو أصلها الخام على منصة (X) بمجرد ملامستها.
+                    <span id="log3-desc" data-ar="شظايا مقتطعة من العدم. نصوص لا تبدو كارتباطات تشعبية، لكنها فجوات سريالية تسحبك نحو أصلها الخام على منصة (X) بمجرد ملامستها." data-en="Fragments carved out of nothingness. Raw texts that masquerade as plain text, yet act as surreal wormholes pulling you back to their source on platform (X) upon contact.">شظايا مقتطعة من العدم. نصوص لا تبدو كارتباطات تشعبية، لكنها فجوات سريالية تسحبك نحو أصلها الخام على منصة (X) بمجرد ملامستها.</span>
                     <div class="wormhole-list">
-                        <!-- فخ الروابط المرجعية المخفية المصممة كـ Blocks منفصلة -->
-                        <a href="https://x.com" target="_blank" class="wormhole">« أستيقظ في الصباح، أنظر إلى شاشة هاتفي، فأجد نفسي قد تحولت إلى مجرد 'رقم حساب' في قاعدة بيانات عملاقة. المسخ لم يكن حشرة، المسخ هو الروتين ».</a>
-                        <a href="https://x.com" target="_blank" class="wormhole">« قضيت عمري أسأل عن معنى كل شيء؛ اليوم، لأول مرة، لا أريد إجابة — لا من الحياة، ولا من الموت ».</a>
-                        <a href="https://x.com" target="_blank" class="wormhole">« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً ».</a>
+                        <a href="https://x.com" target="_blank" class="wormhole" id="wh1" data-ar="« أستيقظ في الصباح، أنظر إلى شاشة هاتفي، فأجد نفسي قد تحولت إلى مجرد 'رقم حساب' في قاعدة بيانات عملاقة. المسخ لم يكن حشرة، المسخ هو الروتين »." data-en="« I wake up in the morning, look at my phone screen, and find myself transformed into a mere 'account number' in a giant database. The metamorphosis wasn't an insect; the metamorphosis is the routine. »">« أستيقظ في الصباح، أنظر إلى شاشة هاتفي، فأجد نفسي قد تحولت إلى مجرد 'رقم حساب' في قاعدة بيانات عملاقة. المسخ لم يكن حشرة، المسخ هو الروتين ».</a>
+                        <a href="https://x.com" target="_blank" class="wormhole" id="wh2" data-ar="« قضيت عمري أسأل عن معنى كل شيء؛ اليوم، لأول مرة، لا أريد إجابة — لا من الحياة، ولا من الموت »." data-en="« I spent my life asking about the meaning of everything; today, for the first time, I do not want an answer — neither from life, nor from death. »">« قضيت عمري أسأل عن معنى كل شيء؛ اليوم، لأول مرة، لا أريد إجابة — لا من الحياة، ولا من الموت ».</a>
+                        <a href="https://x.com" target="_blank" class="wormhole" id="wh3" data-ar="« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً »." data-en="« Silence passes over thoughts like a shadow that leaves no shadow. »">« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً ».</a>
                     </div>
                 </div>
             </details>
 
             <details>
-                <summary>[LOG_04] Raw Origin</summary>
-                <div class="content">
-                    بيانات أدبية تنبع من الصفر. كل السطور المدرجة في هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق.
+                <summary id="log4-title" data-ar="[LOG_04] النشأة والأصالة" data-en="[LOG_04] Raw Origin">[LOG_04] النشأة والأصالة</summary>
+                <div class="content" id="log4-text" 
+                     data-ar="بيانات أدبية تنبع من الصفر. كل السطور المدرجة في هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق." 
+                     data-en="Literary data spawning straight from zero. All lines recorded within this log or broadcasted on platform (X) are the product of an authentic creative experience. No citation, no imitation, and no digital copying/pasting operations exist. True existence rejects replication.">
+                     بيانات أدبية تنبع من الصفر. كل السطور المدرجة في هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق.
                 </div>
             </details>
 
             <details>
-                <summary>[LOG_05] Liquid Ownership</summary>
-                <div class="content">
-                    الملكية السائلة. القارئ امتداد للنص وشريك في صياغته لا مجرد هامش. إن إعادة اقتباس، صياغة، أو نشر ما أكتبه تحت أي اسم آخر هو تدفق طبيعي للفكرة وليس انتهاكاً للملكية. يمتد هذا المفهوم إلى إعادة تصميمك أو تعديلك لأي عمل (AI Art) مرتبط بالهوية البصرية للسجل. الكلمات ملكٌ لمن يشعر بعبئها.
+                <summary id="log5-title" data-ar="[LOG_05] المشاع الرقمي" data-en="[LOG_05] Liquid Ownership">[LOG_05] المشاع الرقمي</summary>
+                <div class="content" id="log5-text" 
+                     data-ar="الملكية السائلة. القارئ امتداد للنص وشريك في صياغته لا مجرد هامش. إن إعادة اقتباس، صياغة، أو نشر ما أكتبه تحت أي اسم آخر هو تدفق طبيعي للفكرة وليس انتهاكاً للملكية. يمتد هذا المفهوم إلى إعادة تصميمك أو تعديلك لأي عمل (AI Art) مرتبط بالهوية البصرية للسجل. الكلمات ملكٌ لمن يشعر بعبئها." 
+                     data-en="Liquid ownership. The reader is an extension of the text and a partner in its articulation, not a mere margin. Re-quoting, rephrasing, or publishing what I write under any other name is a natural flow of the concept, not a copyright violation. This philosophy extends to your redesigning or altering of any AI Art associated with the visual layout of this log. Words belong to whoever feels their weight.">
+                     الملكية السائلة. القارئ امتداد للنص وشريك في صياغته لا مجرد هامش. إن إعادة اقتباس، صياغة، أو نشر ما أكتبه تحت أي اسم آخر هو تدفق طبيعي للفكرة وليس انتهاكاً للملكية. يمتد هذا المفهوم إلى إعادة تصميمك أو تعديلك لأي عمل (AI Art) مرتبط بالهوية البصرية للسجل. الكلمات ملكٌ لمن يشعر بعبئها.
                 </div>
             </details>
 
             <details>
-                <summary>[LOG_06] Visual Data — قريباً</summary>
-                <div class="content">
-                    هندسة المجهول. يتم حالياً معالجة وتوليد البيانات البصرية المقترنة بالنصوص. جاري تجهيز الهوية الرقمية والمشاهد السريالية القاتمة بالكامل لبناء البُعد البصري للسِّجِلّ.
+                <summary id="log6-title" data-ar="[LOG_06] التجسيد البصري — قريباً" data-en="[LOG_06] Visual Data — Coming Soon">[LOG_06] التجسيد البصري — قريباً</summary>
+                
+                     هندسة المجهول. يتم حالياً معالجة وتوليد البيانات البصرية المقترنة بالنصوص. جاري تجهيز الهوية الرقمية والمشاهد السريالية القاتمة بالكامل لبناء البُعد البصري للسِّجِلّ.
                 </div>
             </details>
         </main>
     </div>
-</body>
-</html>
+
+    <!-- 🛠️ محرك التحويل الفوري الفائق الصرامة (Micro Frontend Logic) -->
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const isRTL = body.getAttribute("dir") === "rtl";
+            const nextLang = isRTL ? "en" : "ar";
+            
+            // 1. قلب اتجاه الصفحة فورا كالمراية
