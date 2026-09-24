@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحمد فقط | السِّجِلّ الرقمي</title>
+    <style>
+        /* 🎨 حزمة الهوية البصرية وتجربة المستخدم (UI/UX System) */
+        :root {
+            /* درجات السواد والرمادي الخوارزمي المستوحاة من فلسفة العدم */
+            --bg-pure-black: #000000;
+            --bg-surface: #050505;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-muted: #444444;
+            --border-line: #1c1c1c;
+            --border-hover: #333333;
+            
+            /* أبعاد تجربة المستخدم المتوافقة مع شاشات الآيفون والويب */
+            --max-width: 620px;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* تهيئة المتصفح لراحة العين */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-pure-black);
+            color: var(--text-secondary);
+            /* استخدام خطوط النظام لآبل والأنظمة الحديثة لضمان الانسيابية وحذف الوزن الزائد */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            padding: 3rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* الحاوية الرئيسية للهيكل البسيط (Minimalist Container) */
+        .container {
+            max-width: var(--max-width);
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        /* ترويسة الصفحة الشخصية */
+        header {
+            margin-bottom: 4rem;
+        }
+
+        header h1 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        header p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* 📁 الأكورديون التفاعلي (UI Accordion) - محاكاة لتوني تشان */
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        details {
+            border-bottom: 1px solid var(--border-line);
+            transition: var(--transition-smooth);
+        }
+
+        details:first-of-type {
+            border-top: 1px solid var(--border-line);
+        }
+
+        /* العنوان القابل للضغط */
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1.4rem 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: var(--transition-smooth);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* سهم الفتح المتناسق في أقصى اليسار */
+        summary::after {
+            content: "↓";
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        /* تغيير السلوك البصري عند التمرير وفوق العنصر المفتوح */
+        details:hover summary {
+            color: var(--text-primary);
+            padding-right: 0.2rem; /* حركة ارتداد خفيفة عند التمرير بالماوس أو اللمس */
+        }
+
+        details[open] {
+            background-color: var(--bg-surface);
+            border-bottom: 1px solid var(--border-hover);
+        }
+
+        details[open] summary {
+            color: var(--text-primary);
+            border-bottom: 1px dashed var(--border-line);
+        }
+
+        details[open] summary::after {
+            transform: rotate(-180deg);
+            color: var(--text-primary);
+        }
+
+        /* مساحة المحتوى الداخلي والأدبي */
+        .content {
+            padding: 1.5rem 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            text-align: justify;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* 🌪️ فخ الفجوات الرقمية (Wormholes Configuration) */
+        .wormhole-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .wormhole {
+            color: var(--text-secondary);
+            text-decoration: none;
+            /* خدعة UX: إلغاء مؤشر اليد لتبدو كنص خام مصمت فيظن الزائر أنه نص عادي ويضغط بالخطأ */
+            cursor: default; 
+            padding: 0.5rem 0;
+            border-right: 2px solid transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .wormhole:hover {
+            color: var(--text-primary);
+            border-right: 2px solid var(--border-hover);
+            padding-right: 0.5rem;
+        }
+
+        /* أنيميشن ناعم جداً عند فتح القوائم للأسفل */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الترويسة الرئيسية للسجل الأدبي -->
+        <header>
+            <h1>أحمد فقط | السِّجِلّ الرقمي</h1>
+            <p>« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً</p>
+        </header>
+
+        <!-- الأقسام الستة المستقرة والنهائية -->
+        <main>
+            <details>
+                <summary>[LOG_01] Inverse Algorithm</summary>
+                <div class="content">
+                    تفكيك القيمة الرقمية. أُمارسُ كتابةَ الرعب الوجودي على منصة (X) عبر هندسة خوارزمية معكوسة. الهدف الحقيقي هو الامتداد الأفقي في الفراغ: تحقيق أقصى معدل مشاهدات وعِدَادُ المتابعين صفر. قائمة المتابَعين تعكس المتابِعين بدقة وتجرد؛ عدد من أُتابعهم يُمثّل عدد من يُتابعني، دون تمييز أو فرز رقمي.
+                </div>
+            </details>
+
+            <details>
+                <summary>[LOG_02] Cross-Lingual Void</summary>
+                <div class="content">
+                    الرعب كشعور كوني عابر للّغات. يجري هندسة البنية التركيبية للنصوص لتتوافق بشكل كامل مع أدوات الترجمة الفورية لمنصة (X). الغاية هي تصفية النص من الهياكل المحلية المعقدة، ليظل المعنى الوجودي حياً، مفهوماً، ومحسوساً بالإنجليزية، الفرنسية، الإسبانية، واليابانية؛ فالخوف من الفراغ لا يحتاج إلى مترجم.
+                </div>
+            </details>
+
+            <details id="wormholes-section">
+                <summary>[LOG_03] Digital Wormholes</summary>
+                <div class="content">
+                    شظايا مقتطعة من العدم. نصوص لا تبدو كارتباطات تشعبية، لكنها فجوات سريالية تسحبك نحو أصلها الخام على منصة (X) بمجرد ملامستها.
+                    <div class="wormhole-list">
+                        <!-- استبدل الرابط أدناه برابط التغريدة المثبتة مباشرة لاحقاً إن أردت -->
+                        <a href="https://x.com" target="_blank" class="wormhole">« أستيقظ في الصباح، أنظر إلى شاشة هاتفي، فأجد نفسي قد تحولت إلى مجرد 'رقم حساب' في قاعدة بيانات عملاقة. المسخ لم يكن حشرة، المسخ هو الروتين ».</a>
+                        <a href="https://x.com" target="_blank" class="wormhole">« قضيت عمري أسأل عن معنى كل شيء؛ اليوم، لأول مرة، لا أريد إجابة — لا من الحياة، ولا من الموت ».</a>
+                        <a href="https://x.com" target="_blank" class="wormhole">« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً ».</a>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>[LOG_04] Raw Origin</summary>
+                <div class="content">
+                    بيانات أدبية تنبع من الصفر. كل السطور المدرجة in هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق.
+                </div>
+            </details>
+
+            <details>
+                <summary>[LOG_05] Liquid Ownership</summary>
+                <div class="content">
+                    الملكية السائلة. القارئ امتداد للنص وشريك في صياغته لا مجرد هامش. إن إعادة اقتباس، صياغة، أو نشر ما أكتبه تحت أي اسم آخر هو تدفق طبيعي للفكرة وليس انتهاكاً للملكية. يمتد هذا المفهوم إلى إعادة تصميمك أو تعديلك لأي عمل (AI Art) مرتبط بالهوية البصرية للسجل. الكلمات ملكٌ لمن يشعر بعبئها.
+                </div>
+            </details>
+
+            <details>
+                <summary>[LOG_06] Visual Data — قريباً</summary>
+                <div class="content">
+                    هندسة المجهول. يتم حالياً معالجة وتوليد البيانات البصرية المقترنة بالنصوص. جاري تجهيز الهوية الرقمية والمشاهد السريالية القاتمة بالكامل لبناء البُعد البصري للسِّجِلّ.
+                </div>
+            </details>
+        </main>
+    </div>
+
+</body>
+</html>
