@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحمد فقط | السِّجِلّ الرقمي</title>
     <style>
-        /* 🎨 حزمة الهوية البصرية وتجربة المستخدم (UI/UX System) */
+        /* 🎨 Microsoft Fluent UI & Identity Theme (مستوحى من هوية اللوحة البصرية) */
         :root {
-            /* درجات السواد والرمادي الخوارزمي المستوحاة من فلسفة العدم */
-            --bg-pure-black: #000000;
-            --bg-surface: #050505;
-            --text-primary: #ffffff;
-            --text-secondary: #888888;
-            --text-muted: #444444;
-            --border-line: #1c1c1c;
-            --border-hover: #333333;
+            /* الألوان المستخرجة مباشرة من صورتك الشخصية */
+            --bg-canvas: #040c11;         /* السواد الزيتي العميق المستوحى من خلفية اللوحة */
+            --bg-card: #08141b;           /* درجة تركواز داكنة جداً للأقسام المفتوحة */
+            --text-primary: #ffffff;       /* القميص الأبيض الناصع للنصوص الرئيسية */
+            --text-secondary: #90a4ae;     /* الرمادي المزرق الفاتح لقراءة مريحة */
+            --accent-crimson: #c62828;     /* الأحمر المخملي الدافئ المستوحى من الورود للروابط والتأثيرات */
+            --border-fluent: #102632;      /* حدود دقيقة متناسقة مع فلسفة مايكروسوفت ديزاين */
+            --border-hover: #1b3d50;       
             
-            /* أبعاد تجربة المستخدم المتوافقة مع شاشات الآيفون والويب */
+            /* أبعاد تجربة المستخدم للويب الحديث */
             --max-width: 620px;
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fluent: all 0.35s cubic-bezier(0.1, 0.9, 0.2, 1); /* انسيابية الحركة الخاصة بمايكروسوفت */
         }
 
-        /* تهيئة المتصفح لراحة العين */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -29,144 +28,155 @@
         }
 
         body {
-            background-color: var(--bg-pure-black);
+            background-color: var(--bg-canvas);
             color: var(--text-secondary);
-            /* استخدام خطوط النظام لآبل والأنظمة الحديثة لضمان الانسيابية وحذف الوزن الزائد */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            padding: 3rem 1.5rem;
+            /* استخدام خطوط الويب الرسمية المعتمَدة في Microsoft Fluent UI لضمان مظهر رسمي حاد ونظيف */
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            padding: 4rem 1.5rem;
             display: flex;
             justify-content: center;
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* الحاوية الرئيسية للهيكل البسيط (Minimalist Container) */
         .container {
             max-width: var(--max-width);
             width: 100%;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
-        /* ترويسة الصفحة الشخصية */
+        /* ترويسة الموقع الهندسية */
         header {
             margin-bottom: 4rem;
+            border-right: 3px solid var(--accent-crimson); /* خط أحمر مخملي يربط الهوية بالاسم */
+            padding-right: 1rem;
         }
 
         header h1 {
-            font-size: 1.35rem;
-            font-weight: 500;
+            font-size: 1.4rem;
+            font-weight: 600;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
         }
 
         header p {
             font-size: 0.88rem;
             color: var(--text-secondary);
             font-weight: 400;
-            opacity: 0.9;
+            opacity: 0.85;
         }
 
-        /* 📁 الأكورديون التفاعلي (UI Accordion) - محاكاة لتوني تشان */
+        /* 📁 الأكورديون المطور (Fluent UI Accordion System) */
         main {
             display: flex;
             flex-direction: column;
+            gap: 1px; /* مسافة متناهية الصغر لتحديد الأقسام */
         }
 
         details {
-            border-bottom: 1px solid var(--border-line);
-            transition: var(--transition-smooth);
+            background-color: transparent;
+            border-bottom: 1px solid var(--border-fluent);
+            transition: var(--transition-fluent);
         }
 
         details:first-of-type {
-            border-top: 1px solid var(--border-line);
+            border-top: 1px solid var(--border-fluent);
         }
 
-        /* العنوان القابل للضغط */
         summary {
             list-style: none;
             cursor: pointer;
-            padding: 1.4rem 0.5rem;
+            padding: 1.5rem 0.8rem;
             font-size: 0.95rem;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--text-primary);
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
-            transition: var(--transition-smooth);
+            transition: var(--transition-fluent);
         }
 
         summary::-webkit-details-marker {
             display: none;
         }
 
-        /* سهم الفتح المتناسق في أقصى اليسار */
+        /* مؤشر حركة مايكروسوفت الانسيابي للفصل */
         summary::after {
-            content: "↓";
-            color: var(--text-muted);
+            content: "＋"; /* علامة بلس دقيقة بدلاً من الأسهم التقليدية */
+            color: var(--text-secondary);
             font-size: 0.85rem;
-            transition: var(--transition-smooth);
+            font-weight: 300;
+            transition: var(--transition-fluent);
         }
 
-        /* تغيير السلوك البصري عند التمرير وفوق العنصر المفتوح */
-        details:hover summary {
-            color: var(--text-primary);
-            padding-right: 0.2rem; /* حركة ارتداد خفيفة عند التمرير بالماوس أو اللمس */
-        }
-
-        details[open] {
-            background-color: var(--bg-surface);
+        /* تأثير التمرير الفاخر (Hover Effects) */
+        details:hover {
             border-bottom: 1px solid var(--border-hover);
+            background-color: #06151f;
+        }
+
+        details:hover summary {
+            padding-right: 1.2rem; /* تمدد خفيف جداً للحركة عند اللمس أو التمرير */
+        }
+
+        /* حالة القسم المفتوح */
+        details[open] {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--accent-crimson); /* يضيء بالأحمر عند الفتح كأنه ينبض من العدم */
         }
 
         details[open] summary {
+            border-bottom: 1px solid var(--border-fluent);
             color: var(--text-primary);
-            border-bottom: 1px dashed var(--border-line);
         }
 
         details[open] summary::after {
-            transform: rotate(-180deg);
-            color: var(--text-primary);
+            content: "－"; /* تتحول لعلامة ناقص عند الفتح */
+            transform: rotate(180deg);
+            color: var(--accent-crimson);
         }
 
-        /* مساحة المحتوى الداخلي والأدبي */
+        /* مساحة البيانات النصية */
         .content {
-            padding: 1.5rem 0.8rem;
+            padding: 1.8rem 1.2rem;
             color: var(--text-secondary);
             font-size: 0.92rem;
             text-align: justify;
-            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fluentSlideIn 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
         }
 
-        /* 🌪️ فخ الفجوات الرقمية (Wormholes Configuration) */
+        /* 🌪️ فخ الفجوات الرقمية المتطابق مع الهوية البصرية الجديدة */
         .wormhole-list {
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .wormhole {
             color: var(--text-secondary);
             text-decoration: none;
-            /* خدعة UX: إلغاء مؤشر اليد لتبدو كنص خام مصمت فيظن الزائر أنه نص عادي ويضغط بالخطأ */
-            cursor: default; 
-            padding: 0.5rem 0;
+            cursor: default; /* خداع الـ UX: إخفاء مؤشر اللمس لتبدو التغريدة كنص محايد */
+            padding: 0.6rem 0.8rem;
             border-right: 2px solid transparent;
-            transition: var(--transition-smooth);
+            transition: var(--transition-fluent);
+            background-color: #051016;
+            border-radius: 2px;
         }
 
         .wormhole:hover {
             color: var(--text-primary);
-            border-right: 2px solid var(--border-hover);
-            padding-right: 0.5rem;
+            border-right: 2px solid var(--accent-crimson); /* إضاءة حمراء ناعمة من روح اللوحة تنبثق فجأة */
+            background-color: #071720;
+            padding-right: 1.2rem;
         }
 
-        /* أنيميشن ناعم جداً عند فتح القوائم للأسفل */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-4px); }
+        /* حركات الأنيميشن المعتمدة في واجهات Fluent UI */
+        @keyframes fluentSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -174,13 +184,13 @@
 <body>
 
     <div class="container">
-        <!-- الترويسة الرئيسية للسجل الأدبي -->
+        <!-- الترويسة الفنية -->
         <header>
             <h1>أحمد فقط | السِّجِلّ الرقمي</h1>
             <p>« الكتابة هي شكل من أشكال الصلاة » موظف تأمين نهاراً - كاتب رعب وجودي ليلاً</p>
         </header>
 
-        <!-- الأقسام الستة المستقرة والنهائية -->
+        <!-- مستودع الأقسام الستة التفاعلية -->
         <main>
             <details>
                 <summary>[LOG_01] Inverse Algorithm</summary>
@@ -196,12 +206,12 @@
                 </div>
             </details>
 
-            <details id="wormholes-section">
+            <details>
                 <summary>[LOG_03] Digital Wormholes</summary>
                 <div class="content">
                     شظايا مقتطعة من العدم. نصوص لا تبدو كارتباطات تشعبية، لكنها فجوات سريالية تسحبك نحو أصلها الخام على منصة (X) بمجرد ملامستها.
                     <div class="wormhole-list">
-                        <!-- استبدل الرابط أدناه برابط التغريدة المثبتة مباشرة لاحقاً إن أردت -->
+                        <!-- فخ الروابط المرجعية المخفية -->
                         <a href="https://x.com" target="_blank" class="wormhole">« أستيقظ في الصباح، أنظر إلى شاشة هاتفي، فأجد نفسي قد تحولت إلى مجرد 'رقم حساب' في قاعدة بيانات عملاقة. المسخ لم يكن حشرة، المسخ هو الروتين ».</a>
                         <a href="https://x.com" target="_blank" class="wormhole">« قضيت عمري أسأل عن معنى كل شيء؛ اليوم، لأول مرة، لا أريد إجابة — لا من الحياة، ولا من الموت ».</a>
                         <a href="https://x.com" target="_blank" class="wormhole">« الصمت يمرّ فوق الأفكار كظلٍّ لا يترك ظلاً ».</a>
@@ -212,7 +222,7 @@
             <details>
                 <summary>[LOG_04] Raw Origin</summary>
                 <div class="content">
-                    بيانات أدبية تنبع من الصفر. كل السطور المدرجة in هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق.
+                    بيانات أدبية تنبع من الصفر. كل السطور المدرجة في هذا السِّجِلّ أو المنشورة على منصة (X) هي نتاج تجربة إبداعية أصيلة. لا وجود للاقتباس، المحاكاة، أو عمليات النسخ والنقل الرقمي. الوجود الحقيقي لا يقبل النسخ واللصق.
                 </div>
             </details>
 
