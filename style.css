@@ -1,23 +1,20 @@
 /* 🎨 Microsoft Fluent 2 Design System - Identity Theme */
 
 :root {
-    /* لوحة الألوان المستخرجة هندسياً والمتوافقة مع معايير الواجهات المظلمة */
     --bg-canvas: #03090d;         /* السواد الزيتي العميق */
     --bg-card: #06141c;           /* التركواز الداكن جداً للبطاقات المفتوحة */
     --text-primary: #ffffff;       /* الأبيض الناصع للنصوص الرئيسية */
     --text-secondary: #8ca0ab;     /* الرمادي المزرق لقراءة مريحة وعميقة */
-    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والزر الرئيسي (Accent) */
-    --accent-hover: #d32f2f;       /* درجة التفاعل الأفتح */
+    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والأقسام المفتوحة */
     --border-fluent: #0c202b;      /* الحدود الدقيقة المعتمدة في مايكروسوفت */
     --border-hover: #153243;       
     
-    /* المقياس الصارم الفلويد لراحة العين على كل الأجهزة (Fluid Layout) */
+    /* المقياس الصارم الفلويد لراحة العين على كل الأجهزة */
     --fluid-font-title: clamp(1.2rem, 2vw + 0.8rem, 1.5rem);
     --fluid-font-body: clamp(0.88rem, 1vw + 0.75rem, 0.96rem);
-    --fluid-font-meta: clamp(0.8rem, 0.5vw + 0.7rem, 0.85rem);
+    --fluid-font-meta: clamp(0.82rem, 0.5vw + 0.75rem, 0.88rem);
     --max-width: clamp(320px, 90vw, 620px);
     
-    /* انسيابية حركة مايكروسوفت القياسية للواجهات التفاعلية */
     --transition-fluent: all 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
@@ -30,7 +27,6 @@
 body {
     background-color: var(--bg-canvas);
     color: var(--text-secondary);
-    /* الاعتماد الصارم على عائلة خطوط Segoe UI الرسمية لمايكروسوفت */
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     padding: clamp(2rem, 5vw, 4rem) 1.5rem;
     display: flex;
@@ -46,85 +42,42 @@ body {
     margin-top: 1rem;
 }
 
-/* 👤 الهيدر الصارم والنظيف بنظام مايكروسوفت ديزاين */
+/* 👤 الهيدر الصارم والمجرد بالكامل بدون أزرار أو مشتتات */
 header {
-    margin-bottom: 4rem;
+    margin-bottom: clamp(3rem, 8vw, 4.5rem);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    border-bottom: 1px dashed var(--border-fluent);
-    padding-bottom: 2rem;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid var(--border-fluent);
+    padding-bottom: 2.5rem;
+}
+
+.profile-info {
+    width: 100%;
 }
 
 .profile-info h1 {
     font-size: var(--fluid-font-title);
-    font-weight: 600; /* الوزن الرسمي للعناوين */
+    font-weight: 500; /* خط أنيق ونحيف حسب معايير مايكروسوفت للمحتوى المظلم */
     color: var(--text-primary);
-    letter-spacing: -0.01em;
-    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
 }
 
 .profile-info p {
     font-size: var(--fluid-font-meta);
     color: var(--text-secondary);
     font-weight: 400;
-    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 95%;
+    opacity: 0.8;
 }
 
-/* 🎛️ حزمة أزرار التحكم الرسمية (Microsoft Fluent UI Buttons) */
-.action-buttons {
-    display: flex;
-    gap: 0.7rem;
-    align-items: center;
-}
+/* ضبط اتجاه الصفحة تلقائياً دون الحاجة لجافا سكريبت */
+body[dir="rtl"] header { text-align: right; }
+body[dir="ltr"] header { text-align: left; }
 
-.fluent-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.55rem 1.1rem;
-    font-size: var(--fluid-font-meta);
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 4px; /* زوايا الانحناء القياسية لمايكروسوفت */
-    transition: var(--transition-fluent);
-    cursor: pointer;
-    user-select: none;
-}
-
-/* زر التحويل اللغوي الرئيسي ممتلئ (Accent/Primary Button) */
-.fluent-btn-primary {
-    background-color: var(--accent-crimson);
-    color: var(--text-primary);
-    border: 1px solid transparent;
-}
-
-.fluent-btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-1px);
-}
-
-/* الزر الثانوي الشفاف المحدد (Outline/Neutral Button) */
-.fluent-btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--border-fluent);
-}
-
-.fluent-btn-secondary:hover {
-    background-color: var(--bg-card);
-    border-color: var(--border-hover);
-}
-
-/* قلب المحاذاة والمراية ديناميكياً حسب اتجاه الصفحة */
-body[dir="rtl"] { text-align: right; }
-body[dir="ltr"] { text-align: left; }
-
-body[dir="rtl"] header { border-right: 3px solid var(--accent-crimson); padding-right: 1rem; border-left: none; padding-left: 0; }
-body[dir="ltr"] header { border-left: 3px solid var(--accent-crimson); padding-left: 1rem; border-right: none; padding-right: 0; }
-
-/* 📁 نظام الأكورديون للأقسام الستة (Fluent Accordion) */
+/* 📁 نظام الأكورديون للأقسام الستة */
 main { display: flex; flex-direction: column; gap: 1px; }
 details { background-color: transparent; border-bottom: 1px solid var(--border-fluent); transition: var(--transition-fluent); }
 details:first-of-type { border-top: 1px solid var(--border-fluent); }
@@ -152,8 +105,8 @@ summary::after {
     transition: var(--transition-fluent);
 }
 
-body[dir="rtl"] details:hover summary { padding-right: 1.2rem; padding-left: 0; }
-body[dir="ltr"] details:hover summary { padding-left: 1.2rem; padding-right: 0; }
+body[dir="rtl"] details:hover summary { padding-right: 1.2rem; }
+body[dir="ltr"] details:hover summary { padding-left: 1.2rem; }
 
 details[open] { background-color: var(--bg-card); border-bottom: 1px solid var(--accent-crimson); }
 details[open] summary { border-bottom: 1px solid var(--border-fluent); color: var(--text-primary); }
@@ -172,8 +125,8 @@ body[dir="ltr"] .content { text-align: left; }
 .wormhole-list { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 1.2rem; }
 .wormhole { color: var(--text-secondary); text-decoration: none; cursor: default; display: block; width: 100%; padding: 1rem 1.2rem; border-radius: 2px; background-color: #040e14; transition: var(--transition-fluent); }
 
-body[dir="rtl"] .wormhole { text-align: right; border-right: 2px solid transparent; border-left: none; }
-body[dir="ltr"] .wormhole { text-align: left; border-left: 2px solid transparent; border-right: none; }
+body[dir="rtl"] .wormhole { text-align: right; border-right: 2px solid transparent; }
+body[dir="ltr"] .wormhole { text-align: left; border-left: 2px solid transparent; }
 
 body[dir="rtl"] .wormhole:hover { color: var(--text-primary); border-right: 2px solid var(--accent-crimson); background-color: #06161f; padding-right: 1.6rem; }
 body[dir="ltr"] .wormhole:hover { color: var(--text-primary); border-left: 2px solid var(--accent-crimson); background-color: #06161f; padding-left: 1.6rem; }
