@@ -5,7 +5,7 @@
     --bg-card: #06141c;           /* التركواز الداكن جداً للبطاقات المفتوحة */
     --text-primary: #ffffff;       /* الأبيض الناصع للنصوص الرئيسية */
     --text-secondary: #8ca0ab;     /* الرمادي المزرق لقراءة مريحة وعميقة */
-    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والأقسام المفتوحة */
+    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والخط العمودي */
     --border-fluent: #0c202b;      /* الحدود الدقيقة المعتمدة في مايكروسوفت */
     --border-hover: #153243;       
     
@@ -42,14 +42,14 @@ body {
     margin-top: 1rem;
 }
 
-/* 👤 الهيدر الصارم والمجرد بالكامل بدون أزرار أو مشتتات */
+/* 👤 الهيدر الصارم والمجرد وإزاحة الفراغات الهندسية */
 header {
-    margin-bottom: clamp(3rem, 8vw, 4.5rem);
+    margin-bottom: clamp(2.5rem, 6vw, 3.5rem); /* تقليص الفراغ الخارجي مع الأكورديون */
     display: flex;
     flex-direction: column;
     width: 100%;
     border-bottom: 1px solid var(--border-fluent);
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.8rem; /* مسافة داخلية محكمة للخط الفاصل */
 }
 
 .profile-info {
@@ -58,22 +58,29 @@ header {
 
 .profile-info h1 {
     font-size: var(--fluid-font-title);
-    font-weight: 500; /* خط أنيق ونحيف حسب معايير مايكروسوفت للمحتوى المظلم */
+    font-weight: 500;
     color: var(--text-primary);
     letter-spacing: -0.02em;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem; /* إزاحة الفراغ الزائد لتقريب النص الفرعي */
+}
+
+/* صبغ الخط العمودي الفاصل بالأحمر المخملي للهوية */
+.brand-divider {
+    color: var(--accent-crimson);
+    margin: 0 0.4rem;
+    font-weight: 400;
 }
 
 .profile-info p {
     font-size: var(--fluid-font-meta);
     color: var(--text-secondary);
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
     max-width: 95%;
     opacity: 0.8;
 }
 
-/* ضبط اتجاه الصفحة تلقائياً دون الحاجة لجافا سكريبت */
+/* ضبط اتجاه المحاذاة */
 body[dir="rtl"] header { text-align: right; }
 body[dir="ltr"] header { text-align: left; }
 
@@ -97,7 +104,6 @@ summary {
 }
 summary::-webkit-details-marker { display: none; }
 
-/* علامة بلس التفاعلية الدقيقة للفتح */
 summary::after {
     content: "＋"; 
     color: var(--text-secondary);
