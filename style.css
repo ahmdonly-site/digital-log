@@ -2,10 +2,11 @@
 
 :root {
     --bg-canvas: #03090d;         /* السواد الزيتي العميق */
-    --bg-card: #06141c;           /* التركواز الداكن جداً للبطاقات المفتوحة */
+    --bg-card: #06141c;           /* التركواز الداكن جداً للبطاقات المفتوحة وتفاعل الأزرار الشفافة */
     --text-primary: #ffffff;       /* الأبيض الناصع للنصوص الرئيسية */
     --text-secondary: #8ca0ab;     /* الرمادي المزرق لقراءة مريحة وعميقة */
-    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والخط العمودي */
+    --accent-crimson: #b71c1c;     /* الأحمر المخملي للورد والزر الرئيسي */
+    --accent-hover: #d32f2f;       /* درجة التفاعل الأفتح للأحمر */
     --border-fluent: #0c202b;      /* الحدود الدقيقة المعتمدة في مايكروسوفت */
     --border-hover: #153243;       
     
@@ -15,7 +16,7 @@
     --fluid-font-meta: clamp(0.82rem, 0.5vw + 0.75rem, 0.88rem);
     --max-width: clamp(320px, 90vw, 620px);
     
-    --transition-fluent: all 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+    --transition-fluent: all 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
 }
 
 * {
@@ -42,14 +43,12 @@ body {
     margin-top: 1rem;
 }
 
-/* 👤 الهيدر الصارم والمجرد وإزاحة الفراغات الهندسية */
+/* 👤 الهيدر الصارم والمجرد */
 header {
-    margin-bottom: clamp(2.5rem, 6vw, 3.5rem); /* تقليص الفراغ الخارجي مع الأكورديون */
+    margin-bottom: 2rem; /* تقليص المسافة لنزول شبكة الأزرار بانتظام */
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-bottom: 1px solid var(--border-fluent);
-    padding-bottom: 1.8rem; /* مسافة داخلية محكمة للخط الفاصل */
 }
 
 .profile-info {
@@ -61,10 +60,9 @@ header {
     font-weight: 500;
     color: var(--text-primary);
     letter-spacing: -0.02em;
-    margin-bottom: 0.4rem; /* إزاحة الفراغ الزائد لتقريب النص الفرعي */
+    margin-bottom: 0.4rem;
 }
 
-/* صبغ الخط العمودي الفاصل بالأحمر المخملي للهوية */
 .brand-divider {
     color: var(--accent-crimson);
     margin: 0 0.4rem;
@@ -80,9 +78,58 @@ header {
     opacity: 0.8;
 }
 
-/* ضبط اتجاه المحاذاة */
-body[dir="rtl"] header { text-align: right; }
-body[dir="ltr"] header { text-align: left; }
+/* 🎛️ شبكة أزرار التحكم الفلويد (Fluent 2 Button Component Space) */
+.nav-buttons-container {
+    display: flex;
+    gap: 0.8rem; /* مسافات صارمة ومتقاربة لتوازن الواجهة */
+    width: 100%;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-fluent);
+    padding-bottom: 2rem;
+    flex-wrap: wrap; /* تضمن تراص الأزرار بمرونة تامة على شاشات الآيفون المتفاوتة */
+}
+
+.fluent-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.2rem; /* مقياس مساحة الضغط المعتمد لمايكروسوفت على الهواتف */
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px; /* زوايا الانحناء القياسية المحددة */
+    transition: var(--transition-fluent);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* 1. زر Accent ممتلئ بلون الورد الأحمر المخملي */
+.btn-accent {
+    background-color: var(--accent-crimson);
+    color: var(--text-primary);
+    border: 1px solid transparent;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px); /* تفاعل حركي دقيق */
+}
+
+/* 2. الأزرار الشفافة بالكامل النظيفة (Subtle/Transparent Buttons) */
+.btn-subtle {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+}
+
+.btn-subtle:hover {
+    background-color: var(--bg-card); /* إضاءة تركوازية داكنة خافتة جداً ومريحة للعين */
+    color: var(--text-primary);
+}
+
+/* ضبط اتجاه المحاذاة للمحتوى */
+body[dir="rtl"] header, body[dir="rtl"] .nav-buttons-container { text-align: right; justify-content: flex-start; }
+body[dir="ltr"] header, body[dir="ltr"] .nav-buttons-container { text-align: left; justify-content: flex-start; }
 
 /* 📁 نظام الأكورديون للأقسام الستة */
 main { display: flex; flex-direction: column; gap: 1px; }
