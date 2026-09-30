@@ -188,3 +188,97 @@ body[dir="rtl"] .wormhole:hover { color: var(--text-primary); border-right: 2px 
 body[dir="ltr"] .wormhole:hover { color: var(--text-primary); border-left: 2px solid var(--accent-crimson); background-color: var(--bg-card); padding-left: 1.6rem; }
 
 @keyframes fluentSlideIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+/* ==========================================================================
+   🎴 Microsoft Fluent 2 Card Component - For [why-me.html]
+   ========================================================================== */
+
+/* الحاوية المركزية لصفحة لِمَ أنا */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* الكارت العمودي الصارم حسب المواصفات الفنية المرفقة */
+.fluent-card {
+    background-color: var(--bg-card); /* الأزرق المخضر الغامق للبنية */
+    border: 1px solid var(--border-fluent);
+    border-radius: 6px; /* انحناء دقيق يتوافق مع معايير المنتجات */
+    width: 100%;
+    max-width: 440px; /* عرض مثالي وصارم على شاشات الآيفون */
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    transition: var(--transition-fluent);
+}
+
+.fluent-card:hover {
+    border-color: var(--sky-accent); /* يضيء بالأزرق السماوي النادر للنظام */
+    transform: translateY(-2px);
+}
+
+/* 1. Card Preview (منطقة الصورة العلوية الممتدة) */
+.card-preview {
+    width: 100%;
+    height: clamp(180px, 30vh, 240px);
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-fluent);
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* حماية الصورة من التشويه هندسياً عند التمدد */
+    transition: var(--transition-fluent);
+}
+
+.fluent-card:hover .card-preview img {
+    transform: scale(1.03); /* تمدد سريالي متناهي الصغر للصورة عند التمرير */
+}
+
+/* 2. Card Header & Content (منطقة النصوص والبيانات) */
+.card-body {
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-title-area h2 {
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
+    font-weight: 500;
+    color: var(--text-primary); /* الأبيض الدافئ */
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+}
+
+.card-title-area .card-subtitle {
+    font-size: 0.8rem;
+    color: var(--sky-accent); /* لمسة الأزرق السماوي النادرة للكرافتة */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* متن النص الأدبي الوجودي الصارم */
+.card-description {
+    font-size: var(--fluid-font-body);
+    color: var(--text-secondary); /* الرمادي المزرق المريح */
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* 3. Card Footer (منطقة الإجراءات والعودة) */
+.card-footer {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end; /* دفع زر الإجراء لليسار بانتظام */
+    border-top: 1px dashed var(--border-fluent);
+    padding-top: 1.2rem;
+}
+
+.btn-back {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
+}
